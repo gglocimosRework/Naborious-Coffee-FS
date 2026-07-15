@@ -1,0 +1,59 @@
+
+@media (max-width: 900px) {
+    .coffee-grid, .sweet-grid, .others-sweets-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+
+  
+  body {
+    overflow-x: hidden;
+  }
+
+  header {
+    padding: 11px 15px;
+  }
+
+  nav ul {
+    display: none; 
+  }
+
+  .menu-toggle {
+    display: block; 
+    font-size: 26px;
+    cursor: pointer;
+  }
+
+  
+  .mobile-menu {
+    top: 80px;
+    right: -100%;
+    width: 85%;
+    max-width: 260px;
+    z-index: 1000;
+  }
+
+  .mobile-menu.active {
+    right: 12px;
+  }
+
+  
+  .hero {
+    height: 40vh;
+    background-attachment: scroll;
+  }
+
+  .hero-name {
+    font-size: 22px;
+    padding: 0 10px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-name {
+    font-size: 20px;
+  }
+}

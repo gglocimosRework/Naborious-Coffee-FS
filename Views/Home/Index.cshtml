@@ -1,0 +1,109 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naborious Coffee</title>
+
+    <link rel="icon" href="~/images/logo.jpeg" type="image/logo.jpeg">
+    <link rel="stylesheet" href="~/css/general.css"> 
+    <link rel="stylesheet" href="~/css/header.css">
+    <link rel="stylesheet" href="~/css/featured.css">
+    <link rel="stylesheet" href="~/css/mobile.css">
+
+</head>
+<body>
+    <header>
+        <div class="brand"> 
+
+          <img id="logoIcon" src="~/images/logo.jpeg" 
+          alt="Naborious Coffee Logo" 
+          class="logo">
+          <h1>Naborious Coffee</h1>
+
+        </div>
+
+        <nav>
+               
+            <button id="theme-switch"> 
+              <img id="lightMode" src="~/images/light_mode.png" alt="Light Mode Icon">
+              <img id="darkMode" src="~/images/dark_mode.png" alt="Dark Mode Icon">
+            </button>
+
+            <div id="menu-wrapper"> 
+                <div class="menu-toggle js-menu-toggle">☰
+                </div>
+                
+                <div class="mobile-menu" id="mobileMenu">
+                    <a href="#" class="return-text-menu">Return</a>
+
+                    <a href="#featured-coffees" class="scroll-link" 
+                    data-target="featured-coffees">Coffees</a>
+
+                    <a href="#featured-canadian-sweets" class="scroll-link" 
+                    data-target="featured-canadian-sweets">Featured Sweets</a>
+
+                    <a href="#other-sweets" class="scroll-link" 
+                    data-target="other-sweets">Other Sweets</a>
+
+                    <a href="#about" class="scroll-link" data-target="about">About Us</a>
+
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+     
+    <main id="mainContent">
+        <section class="hero">
+            <p class="hero-name"> Delicious flavors await you!</p>
+        </section>
+
+        <div class="overlay" id="overlay"></div>
+          <div class="product-modal" id="productModal">
+            
+                <button class="close-modal" id="closeModal">✕</button>
+                <img id="modalImage" src="" alt="">
+                <h2 id="modalTitle"></h2>
+                <p id="modalDescription"></p>
+                <span id="modalPrice"></span>
+                <button class="buy-btn">Buy</button>
+        
+          </div>
+    </main>
+
+   <section class="about-section" id="about">
+        <h3 class="about-us">About Us</h3>
+        <p> 
+            Naborious Coffee is dedicated place on Canada to providing the highest quality 
+            coffee experience and cultural canadian sweets. 
+            We source our beans from sustainable farms around the world and roast
+        </p>
+
+        <h3 class="contact-us">Contact Us</h3>
+        <p>
+            Email: info@naboriouscoffee.com
+        </p>
+        <p>
+            Phone: +1 (555) 123-4567
+        </p>
+        <p>
+            Address: 183 Coffee Street, Quebec, Montreal, Canada
+        </p>
+    </section>
+
+
+  <footer class="footer">
+        <p>&copy; 2024 Naborious Coffee. All rights reserved.</p>
+  </footer>
+
+
+         <script type="module" src="~/js/Main.js"></script>
+ </body>        
+</html>

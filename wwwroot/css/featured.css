@@ -1,0 +1,129 @@
+.featured, .featured-canada-sweets, .featured-others-sweets {
+    padding: 60px 8%;
+    text-align: center; 
+}
+
+.featured-canada-sweets {
+    background: linear-gradient(to bottom right, 
+    var(--featured-sweets-bg-color-1), 
+    var(--featured-sweets-bg-color-2)); 
+    position: relative;
+    padding: 80px 8%;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px var(--slightly-black-color);
+    text-align: center;
+    margin: 40px 0;
+    overflow: hidden;
+}
+
+.featured-canada-sweets::before {
+    content: '🍁🍁🍁';
+    position: absolute;
+    font-size: 150px;
+    top: 20px;
+    left: 20px;
+    opacity: 0.15;
+    transform: rotate(-15deg);
+}
+
+/* targetting coffee's(or sweets/desserts) title and Featured's texts by section at the same time */
+.featured h3, .featured-canada-sweets h3, .featured-others-sweets h3 {
+    font-size: 32px;
+    margin-bottom: 40px;
+}
+
+.coffee-grid, .sweet-grid, .others-sweets-grid {     
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 115px;
+    justify-items: center;
+}
+
+.coffee-item, .sweet-item, .other-sweet-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+    background: var(--light-beige-color);
+    color: var(--black-color);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px var(--slightly-black-color);
+    margin-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.sweet-item {
+    padding: 30px;
+}
+
+.coffee-item:hover, .sweet-item:hover, .other-sweet-item:hover {
+    background: var(--coffee-items-hover-bg-color);
+     box-shadow: 0 15px 35px var(--slightly-black-color);
+    transform: translateY(-5px);
+}
+
+.sweet-item:hover {
+    background: var(--sweet-items-hover-bg-color);
+}
+
+.coffee-item img, .sweet-item img, .other-sweet-item img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+/* targetting just from coffes/sweets/desserts  */
+.coffee-item h3, .sweet-item h3, .other-sweet-item h3 {
+    margin-bottom: 10px;
+}
+
+/* targeting shortDescription/first description's visible */
+.coffee-item p, .sweet-item p, .other-sweet-item p {
+    font-weight: 650;
+    color: var(--black-color);
+    font-size: 16.5px;
+}
+
+.product-price {
+    font-size: 27px;
+    font-weight: 700;
+}
+
+.featured-canada-sweets .product-price {
+   color: var(--black-color);
+}
+
+/* Modal styles */
+.product-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+#modalProduct {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: var(--hero-overlay-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+#modalImage {
+     width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}

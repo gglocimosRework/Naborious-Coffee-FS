@@ -1,0 +1,260 @@
+:root { 
+  --primary-color: #ff7a1a; 
+  --secondary-color: #fff8f2; 
+  --tertiary-color: #fef5eb; 
+  --white-color: #fff; 
+  --black-color: #000; 
+  --theme-switch-color: #5b678b94; /* exclusive for theme-switch button*/
+  --grey-color: #333; 
+  --footer-bg-color: #222; 
+  --orange-tone-1-color: #e96b10; 
+  --orange-tone-2-color: #c85b0e; 
+  --simple-brown-color: #9b480c; 
+  --light-beige-color: rgb(230, 180, 124); 
+  --hero-overlay-color: rgba(0,0,0,0.4); /* for hero section color and modal product */
+  --slightly-black-color: rgba(0, 0, 0, 0.2);  /* for all the box-shadows*/
+  --featured-sweets-bg-color-1: #ffe5d9; 
+  --featured-sweets-bg-color-2: #ffd6a5;
+  --sweet-items-hover-bg-color: rgba(230, 180, 124, 0.4); /* exclusive color for 
+  sweet items(canada) on hover*/
+  --coffee-items-hover-bg-color:  rgba(230, 180, 124, 0.9);
+  --about-us-bg-color: #000000; /* exclusive for about us section */
+  /* it'll be used for red elements such as buttons and product price titles*/
+  --red-color: #e96b10;  
+  --slightly-black-red-color: #c85b0e; 
+  --black-red-color: #8b3c04;
+} 
+  
+.darkmode { 
+  --primary-color: #222; 
+  --secondary-color: #6d6767bd; 
+  --tertiary-color: #121212; 
+  --black-color: #1e1e1e; 
+  --white-color: #ffffff; 
+  --grey-color: #b3b3b3; 
+  --footer-bg-color: #0f0f0f; 
+  --orange-tone-1-color: #6d6767bd; 
+  --orange-tone-2-color: #c85b0e;
+  --simple-brown-color: #9b480c; 
+  --light-beige-color: #df8e50; 
+  --hero-overlay-color: rgba(0,0,0,0.7); 
+  --slightly-black-color: rgba(0, 0, 0, 0.4); 
+  --about-us-bg-color: #fef5eb;
+  --red-color: #fd0000bd;
+  --slightly-black-red-color: #af0303bd; 
+  --black-red-color: #8a0202bd;
+}
+
+#theme-switch {  
+  display: flex;   
+  align-items: center;   
+  justify-content: center;   
+  background-color: var(--theme-switch-color);   
+  border: solid 1.7px var(--black-color);   
+  width: 50px;   height: 50px;   
+  border-radius: 50%;   
+  cursor: pointer; 
+  transition: background-color 0.3s ease;
+}
+
+#theme-switch:hover { 
+  background-color: var(--theme-switch-color); 
+} 
+
+#theme-switch:active {
+  background-color: var(--theme-switch-color);
+  opacity: 0.8;
+}
+
+
+#theme-switch img {
+  width: 24px;
+  height: 24px;
+}
+
+#theme-switch img:last-child {
+  display: none;
+}
+
+.darkmode #theme-switch img:first-child {
+  display: none;
+}
+
+.darkmode #theme-switch img:last-child {
+  display: block;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--secondary-color);
+    color: var(--black-color);
+}
+
+p {
+  font-weight: 550;
+  color:  var(--black-color);
+}
+
+.hero {
+    height: 50vh;
+    background: linear-gradient(var(--hero-overlay-color), var(--hero-overlay-color)),
+        url('https://images.unsplash.com/photo-1509042239860-f550ce710b93?&w=800') 
+        center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    background-attachment: fixed;
+}
+
+.hero-name {
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--white-color);
+    text-align: center;
+}
+
+.about-section {
+    background-color: var(--tertiary-color);
+    padding: 80px 8%;
+    text-align: center;
+}
+
+.about-section h3 {
+    font-size: 28px;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.about-section p {
+    font-size: 20px;
+    line-height: 1.7;
+    max-width: 800px;
+    margin: 0 auto 20px auto;   
+    color: var(--grey-color);
+}
+
+.about-us {
+    color: var(--about-us-bg-color);
+    font-size: 36px;
+    padding: 40px 5%;
+    text-align: center;
+    text-wrap: wrap;
+    font-weight: 700;
+}
+
+.contact-us {
+    color: var(--about-us-bg-color);
+    font-size: 28px;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+footer {
+    background-color: var(--footer-bg-color);
+    color: var(--white-color);
+    padding: 30px 5%;
+    text-align: center;
+    font-size: 16px;
+}
+
+footer p {
+    color: var(--white-color);
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: var(--slightly-black-color);
+  backdrop-filter: blur(6px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 900;
+}
+
+.product-modal {
+  position: fixed;
+  background: var(--light-beige-color);
+  border-radius: 18px;
+  padding: 24px;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.95);
+  opacity: 0;
+  width: min(90%, 420px);
+  pointer-events: none;
+  transition: 0.3s ease;
+  z-index: 1000;
+}
+
+.product-modal img {
+  width: 70%;
+  border-radius: 12px;
+  margin-bottom: 16px;
+}
+
+.product-modal h2 {
+  margin-bottom: 8px;
+}
+
+.product-modal span {
+  display: block;
+  margin-top: 12px;
+  font-weight: 700;
+  color: var(--red-color);
+}
+
+.close-modal {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.overlay.active,
+.product-modal.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.product-modal.active {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.buy-btn {
+  margin-top: 20px;
+  padding: 12px 110px;
+  background-color: var(--red-color);
+  color: var(--white-color);
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, 0.2s ease;
+}
+
+.buy-btn:hover {
+  background-color: var(--slightly-black-red-color);
+  transform: translateY(-2px);
+}
+
+.buy-btn:active {
+    background-color: var(--black-red-color);
+}
