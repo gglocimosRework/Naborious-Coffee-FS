@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Naborious-Coffe-FS")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f306da0e70b10276e7f12060cf2a28c6cac475e6")]
 [assembly: System.Reflection.AssemblyProductAttribute("Naborious-Coffe-FS")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Naborious-Coffe-FS")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
