@@ -1,36 +1,46 @@
-using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Naborious_Coffe_FS.Models;
 using NaboriousCoffee.Data;
-// Garante o acesso à pasta do seu AppDbContext
+
 
 namespace Naborious_Coffe_FS.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly AppDbContext _context; // Adicionado para acessar o banco
+        private readonly AppDbContext _context; // Database access via Entity Framework Core
 
-        // Construtor atualizado para receber o AppDbContext
+        //Updated Constructor to accept AppDbContext for dependency injection
         public HomeController(AppDbContext context)
         {
             _context = context;
         }
 
-        // 1. Sua página principal agora busca os Cafés do Banco de Dados
+        // search for the Index action method to fetch data from the database
         public async Task<IActionResult> Index()
         {
             var coffees = await _context.Coffees.ToListAsync();
-            return View(coffees); // Passa a lista de Coffee para a View
+            return View(coffees); 
         }
 
-        // 2. Mantendo a sua rota de API que você já tinha, mas agora buscando do banco!
+        // This action method will be called by your JavaScript to fetch the products in JSON format
         [HttpGet]
-        public async Task<IActionResult> GetProducts()
-        {
-            // Busca os cafés do banco para retornar como JSON
-            var coffees = await _context.Coffees.ToListAsync();
-            return Ok(coffees);
-        }
+    public async Task<IActionResult> GetProducts()
+    {
+        var coffees = await _context.Coffees.ToListAsync();
+
+        // Convert with the desired price format
+        var products = coffees.Select(c => new {
+            Id = c.Id,
+            Type = c.Type,
+            Title = c.Title,
+            ShortDescription = c.ShortDescription,
+            Description = c.Description,
+            // 3.5 --> 3.50
+            Price = $"${c.Price.ToString("F2", System.Globalization.CultureInfo.InvariantCulture)}",
+            Image = c.Image
+    }).ToList();
+
+    return Json(products);
+}
     }
 }

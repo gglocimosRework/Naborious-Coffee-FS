@@ -1,0 +1,17 @@
+# ---------------------------- #
+bin/
+obj/
+[D|d]ebug/
+[R|r]elease/
+
+# ---------------------------- #
+.vscode/
+.idea/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# ---------------------------- #
+appsettings.Development.json
+*.user.config

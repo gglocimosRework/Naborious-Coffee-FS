@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using NaboriousCoffee.Data;
-using NaboriousCoffee.Models; // <-- IMPORTANTE: Namespace correto dos seus Models
+using NaboriousCoffee.Models; 
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -30,8 +30,7 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}")
     .WithStaticAssets();
 
-// Bloco para popular o banco de dados se estiver vazio
-// Bloco para popular o banco de dados se estiver vazio
+
 using (var scope = app.Services.CreateScope())
 {
     var services = scope.ServiceProvider;
@@ -39,11 +38,13 @@ using (var scope = app.Services.CreateScope())
     
     context.Database.EnsureCreated();
 
-    // Se a tabela de Cafés estiver vazia, insere todos os produtos do product.js
+    // Seed the database with initial data if it's empty
     if (!context.Coffees.Any())
     {
         context.Coffees.AddRange(
+
             // --- COFFEES ---
+
             new Coffee
             {
                 Type = "coffee",
@@ -100,6 +101,7 @@ using (var scope = app.Services.CreateScope())
             },
 
             // --- CANADIAN SWEETS ---
+
             new Coffee
             {
                 Type = "canadian",
@@ -129,6 +131,7 @@ using (var scope = app.Services.CreateScope())
             },
 
             // --- OTHER SWEETS ---
+            
             new Coffee
             {
                 Type = "sweet",
